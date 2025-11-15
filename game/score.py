@@ -1,7 +1,6 @@
-# score.py
 import json
 import os
-from .settings import *
+from .settings import MODES, MAX_RECORDS_NUMBER
 
 class PlayerRecord:
     def __init__(self, name: str, difficulty: str, score: int):
@@ -89,3 +88,6 @@ class ScoreHandler:
         for rec in self.game_record.records:
             print(rec)
         print("=======================\n")
+    
+    def prepare_records(self):
+        self.game_record.prepare_records()

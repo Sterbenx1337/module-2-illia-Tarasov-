@@ -1,5 +1,5 @@
-from .settings import *
-from .exceptions import *
+from .settings import PLAYER_LIVES, ALLOWED_ATTACKS, PAPER, STONE, SCISSORS, ENEMY_LIVES
+from .exceptions import GameOver, EnemyDown
 import random
 
 class Player:
@@ -24,7 +24,6 @@ class Player:
         
     def add_score(self, other) -> None:
         self.score += other
-        print(f"(LOG) +{other} points")
 
 class Enemy:
     def __init__(self, difficulty, level) -> None:

@@ -1,21 +1,19 @@
 from .models import Enemy
-from .settings import *
-from .exceptions import *
-from .score import *
+from .settings import POINTS_FOR_KILLING_NORMAL, POINTS_FOR_KILLING_HARD, ATTACK_PAIRS_OUTCOME, POINTS_FOR_FIGHT, SCORE_FILE
+from .exceptions import GameOver, EnemyDown
+from .score import ScoreHandler, PlayerRecord
+# from main import create_player
 
 class Game():
-    def __init__(self, player, difficulty) -> None:
+    def __init__(self, player, difficulty):
         self.player = player
         self.difficulty = difficulty
-        self.level = 1
-        self.enemy = Enemy(self.difficulty, self.level)
+        self.level = 0
+        self.create_new_enemy()
 
     def create_new_enemy(self) -> None:
         self.level += 1
         self.enemy = Enemy(self.difficulty, self.level)
-        print(f"\n=== Enemy Defeated! ===\n"
-              f"New enemy created — (level {self.level})")
-        print("-" * 50)
                 
     def play(self) -> None:
         print("-" * 50)
@@ -26,10 +24,14 @@ class Game():
                 self.handle_fight_result(outcome)
             
             except EnemyDown:
+                print(f"\n=== Enemy Defeated! ===\n" f"New enemy created — (level {self.level})")
+                print("-" * 50)
                 if self.difficulty == 2:
-                    self.player.add_score(POINTS_FOR_KILLING_HARD)
+                        self.player.add_score(POINTS_FOR_KILLING_HARD)
+                        print(f"(LOG) +{POINTS_FOR_KILLING_HARD} points")
                 else:
                     self.player.add_score(POINTS_FOR_KILLING_NORMAL)
+                    print(f"(LOG) +{POINTS_FOR_KILLING_NORMAL} points")
                 self.create_new_enemy()
             
             except GameOver:

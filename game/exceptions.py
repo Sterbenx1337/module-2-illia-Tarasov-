@@ -1,4 +1,3 @@
-
 class GameOver(Exception):
     pass
 
