@@ -1,0 +1,49 @@
+MODE_NORMAL = 'Normal'
+MODE_HARD = 'Hard'
+MODES = {'1': MODE_NORMAL,
+         '2': MODE_HARD}
+
+PLAYER_LIVES = 2
+ENEMY_LIVES = 2
+POINTS_FOR_FIGHT = 1
+POINTS_FOR_KILLING_NORMAL = 5
+POINTS_FOR_KILLING_HARD = 8
+MAX_RECORDS_NUMBER = 5
+
+SCORE_FILE = 'game/scores.json'
+
+PAPER = 'Paper'
+STONE = 'Stone'
+SCISSORS = 'Scissors'
+
+WIN = "Win"
+DRAW = "Draw"
+LOSE = "Lose"
+
+ALLOWED_ATTACKS = {
+    '1': PAPER,
+    '2': STONE,
+    '3': SCISSORS
+}
+
+ATTACK_PAIRS_OUTCOME = {
+    (PAPER, PAPER): DRAW,
+    (PAPER, STONE): WIN,
+    (PAPER, SCISSORS): LOSE,
+    (STONE, PAPER): LOSE,
+    (STONE, STONE): DRAW,
+    (STONE, SCISSORS): WIN,
+    (SCISSORS, PAPER): WIN,
+    (SCISSORS, STONE): LOSE,
+    (SCISSORS, SCISSORS): DRAW
+}
+
+OPTION_START_GAME = "Start game"
+OPTION_SHOW_SCORES = "Show scores"
+OPTION__EXIT = "Exit"
+
+USER_CHOICE_OPTIONS = {
+        "1":OPTION_START_GAME,
+        "2":OPTION_SHOW_SCORES,
+        "3":OPTION__EXIT
+    }

@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Илья",
+        "difficulty": "Hard",
+        "score": 19
+    },
+    {
+        "name": "Illia",
+        "difficulty": "Normal",
+        "score": 13
+    },
+    {
+        "name": "Илья",
+        "difficulty": "Normal",
+        "score": 10
+    },
+    {
+        "name": "1",
+        "difficulty": "Normal",
+        "score": 5
+    },
+    {
+        "name": "Sterben",
+        "difficulty": "Hard",
+        "score": 4
+    }
+]
